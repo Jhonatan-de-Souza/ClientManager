@@ -9,7 +9,13 @@ namespace ClientManager
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                "~/Scripts/jquery-ui-{version}.js",
+                "~/Scripts/datatables/jquery.datatables.js",
+                "~/Scripts/knockout-{version}",
+                "~/Scripts/datatables/datatables.bootstrap.js",
+                "~/Scripts/toastr.js",
+                "~/Scripts/ToastrCustomNotification.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -24,8 +30,12 @@ namespace ClientManager
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                  "~/Content/Gentelella_Theme/gentelella.css",
+                "~/Content/font-awesome.css",
+                "~/Content/themes/base/jquery-ui.css",
+                "~/Content/datatables/css/datatables.bootstrap.css"//,
+                //"~/Content/toastr.css"
+                ));
         }
     }
 }
