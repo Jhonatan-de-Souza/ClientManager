@@ -1,11 +1,12 @@
 ﻿using System;
+using ClientManager.Core.Domain;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using ClientManager.Models;
+using ClientManager.Persistence;
 
 namespace ClientManager
 {
