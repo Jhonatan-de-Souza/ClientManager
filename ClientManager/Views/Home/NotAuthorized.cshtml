@@ -1,0 +1,20 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Você precisa de acesso elevado para acessar esta pagina";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="col-middle">
+        <div class="text-center text-center">
+            <h1 class="error-number">Você não tem acesso a essa pagina</h1>
+            <h2>Você tentou acessar uma pagina que exige um que exige um usuário para acessar.</h2>
+            <p>
+                <h3><a style="color: cornflowerblue" href="#">Clique aqui para voltar para a pagina inicial.</a> </h3>
+            </p>
+            <div class="mid_center">
+            </div>
+        </div>
+    </div>
+</div>

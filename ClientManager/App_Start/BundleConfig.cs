@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace ClientManager
 {
@@ -11,14 +10,22 @@ namespace ClientManager
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                 "~/Scripts/jquery-ui-{version}.js",
-                "~/Scripts/datatables/jquery.datatables.js",
-                "~/Scripts/knockout-{version}",
                 "~/Scripts/datatables/datatables.bootstrap.js",
                 "~/Scripts/toastr.js",
-                "~/Scripts/ToastrCustomNotification.js"));
+                "~/Scripts/CustomToastrNotification.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+                "~/Scripts/jquery.validate.js",
+                "~/Scripts/jquery.validate.unobtrusive.js",
+                "~/Scripts/jquery.validate.globalize.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/inputmask").Include(
+                "~/Scripts/Inputmask/inputmask.js",
+                "~/Scripts/Inputmask/jquery.inputmask.js",
+                "~/Scripts/Inputmask/inputmask.extensions.js",
+                "~/Scripts/Inputmask/inputmask.date.extensions.js",
+                "~/Scripts/Inputmask/inputmask.numeric.extensions.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
@@ -33,9 +40,8 @@ namespace ClientManager
                   "~/Content/Gentelella_Theme/gentelella.css",
                 "~/Content/font-awesome.css",
                 "~/Content/themes/base/jquery-ui.css",
-                "~/Content/datatables/css/datatables.bootstrap.css"//,
-                //"~/Content/toastr.css"
-                ));
+                "~/Content/datatables/css/datatables.bootstrap.css",
+                "~/Content/toastr.css"));
         }
     }
 }

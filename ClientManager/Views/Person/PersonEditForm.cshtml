@@ -1,0 +1,90 @@
+﻿@using System.Web.UI.WebControls
+@model ClientManager.ViewModels.PersonViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="col-lg-12 col-md-12 col-xs-12">
+
+        <br />
+        <div class="x_panel">
+            <div class="x_title">
+
+                <h2>
+                    @ViewBag.Title <small>@ViewBag.Description</small>
+                </h2>
+
+                <div class="clearfix"></div>
+                <div>
+                    @Html.ValidationSummary(false, "", new { @style = "color: red" })
+                </div>
+            </div>
+            <div class="x_content">
+                <br>
+                <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control has-feedback-left", placeholder = "Nome" } })
+                    <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                    @Html.EditorFor(model => model.Cpf, new { htmlAttributes = new { type = "text", @class = "form-control", placeholder = "CPF" } })
+                    <span class="fa fa-id-card form-control-feedback right" aria-hidden="true"></span>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+
+                    <input readonly="readonly" required data-msg-required="Favor preencher a data de Nascimento" class="form-control has-feedback-left" type="text" name="Birthdate" value="@Model.Birthdate.ToString().AsDateTime().ToShortDateString()" id="Birthdate" placeholder="dd-mm-aaaa" />
+                    <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                    @Html.EditorFor(model => model.Phonenumber, new { htmlAttributes = new { id = "Phone1", type = "text", @class = "form-control", placeholder = "Telefone" } })
+                    <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                    <div class="dropclear col-md-12 col-sm-12 col-xs-12">
+                        @Html.DropDownListFor(model => model.Uf, Model.UfList, "Selecione um estado", new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div id="rgInput" class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                    @Html.EditorFor(model => model.Rg, new { htmlAttributes = new { type = "text", @class = "form-control", placeholder = "RG", data_msg_required = "Cadastro de RG é Obrigatório para clientes de SC" } })
+                    <span class="fa fa-id-card form-control-feedback right" aria-hidden="true"></span>
+                </div>
+
+
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="pull-left  col-md-9 col-sm-9 col-xs-12">
+                        <input id="submit" type="submit" value="Salvar" class="btn btn-success" />
+                        @Html.ActionLink("Cancelar", "Index",
+                                      new { controller = "Person" },
+                                      new { @class = "btn btn-danger" })
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <link href="~/Content/styles/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script>
+        var startDateRange = (@DateTime.Now.Year - 125).toString();
+        var endDateRange = @DateTime.Now.Year.ToString();
+    </script>
+    <script src="~/Scripts/Person Scripts/PersonScriptsEditPage.js"></script>
+
+}

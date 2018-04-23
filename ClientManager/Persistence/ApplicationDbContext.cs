@@ -1,7 +1,8 @@
-﻿using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
-using ClientManager.Core.Domain;
+﻿using ClientManager.Core.Domain;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace ClientManager.Persistence
 {
@@ -12,7 +13,7 @@ namespace ClientManager.Persistence
         {
         }
 
-        private DbSet<Person> Person { get; set; }
+        public DbSet<Person> Person { get; set; }
 
         public static ApplicationDbContext Create()
         {
@@ -22,6 +23,9 @@ namespace ClientManager.Persistence
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Properties<DateTime>()
+                .Configure(c => c.HasColumnType("datetime2"));
         }
+
     }
 }
