@@ -9,6 +9,7 @@
 5. Autenticação e Controle de Usuarios usando o **Identity**
 6. Design Responsivo
 7. Template Open Source Gentella
+8. Mapeamento de Classes usando **AutoMapper**
 
 
 #Como rodar o projeto
