@@ -299,14 +299,8 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\gentelella.css" />
     <Content Include="Content\Gentelella_Theme\gentelella.css" />
-    <Content Include="Content\Images\favicon.png" />
-    <Content Include="Content\Images\fonte-branca.png" />
     <Content Include="Content\Images\LoaderIcon.gif" />
-    <Content Include="Content\Images\logo-fonte.png" />
     <Content Include="Content\Images\manage.png" />
-    <Content Include="Content\Images\printTitle.PNG" />
-    <Content Include="Content\Images\printTitle2.PNG" />
-    <Content Include="Content\Images\purpleBackgroundFooter.PNG" />
     <Content Include="Content\Images\userpic.png" />
     <Content Include="Content\jquery.mCustomScrollbar.min.css" />
     <Content Include="Content\nprogress.css" />
